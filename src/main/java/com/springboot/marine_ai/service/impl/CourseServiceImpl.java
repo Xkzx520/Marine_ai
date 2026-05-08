@@ -1,8 +1,8 @@
-package com.springboot.marine_ai.service;
+package com.springboot.marine_ai.service.impl;
 
-import com.springboot.marine_ai.common.ResultCode;
 import com.springboot.marine_ai.entity.Course;
 import com.springboot.marine_ai.mapper.CourseMapper;
+import com.springboot.marine_ai.service.CourseService;
 import com.springboot.marine_ai.vo.CourseVO;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,7 @@
-package com.springboot.marine_ai.service;
+package com.springboot.marine_ai.service.impl;
 
 import com.springboot.marine_ai.dto.AiModelInfoDTO;
+import com.springboot.marine_ai.service.AiService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
