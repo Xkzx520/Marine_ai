@@ -1,8 +1,8 @@
-package com.springboot.marine_ai.service;
+package com.springboot.marine_ai.service.impl;
 
-import com.springboot.marine_ai.common.ResultCode;
 import com.springboot.marine_ai.entity.User;
 import com.springboot.marine_ai.mapper.UserMapper;
+import com.springboot.marine_ai.service.UserService;
 import com.springboot.marine_ai.vo.LoginRequest;
 import com.springboot.marine_ai.vo.UserVO;
 import org.springframework.stereotype.Service;

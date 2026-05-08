@@ -1,7 +1,8 @@
-package com.springboot.marine_ai.service;
+package com.springboot.marine_ai.service.impl;
 
 import com.springboot.marine_ai.entity.Biology;
 import com.springboot.marine_ai.mapper.BiologyMapper;
+import com.springboot.marine_ai.service.BiologyService;
 import com.springboot.marine_ai.vo.BiologyVO;
 import org.springframework.stereotype.Service;
 

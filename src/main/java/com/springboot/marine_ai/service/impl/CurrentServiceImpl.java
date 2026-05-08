@@ -1,4 +1,4 @@
-package com.springboot.marine_ai.service;
+package com.springboot.marine_ai.service.impl;
 
 import com.springboot.marine_ai.dto.CurrentRecordDTO;
 import com.springboot.marine_ai.entity.CurrentKnowledge;
@@ -7,6 +7,7 @@ import com.springboot.marine_ai.entity.CurrentScene;
 import com.springboot.marine_ai.mapper.CurrentKnowledgeMapper;
 import com.springboot.marine_ai.mapper.CurrentParamsMapper;
 import com.springboot.marine_ai.mapper.CurrentSceneMapper;
+import com.springboot.marine_ai.service.CurrentService;
 import com.springboot.marine_ai.vo.SceneSaveRequest;
 import org.springframework.stereotype.Service;
 

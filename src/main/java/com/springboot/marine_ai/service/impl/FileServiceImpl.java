@@ -1,8 +1,8 @@
-package com.springboot.marine_ai.service;
+package com.springboot.marine_ai.service.impl;
 
+import com.springboot.marine_ai.service.FileService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
