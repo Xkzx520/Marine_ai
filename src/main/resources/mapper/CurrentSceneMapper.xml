@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.marine_ai.mapper.CurrentSceneMapper">
+    <select id="selectAll" resultType="com.springboot.marine_ai.entity.CurrentScene">
+        SELECT scene_id AS sceneId, scene_name AS sceneName, wind_power AS windPower,
+               coriolis_enabled AS coriolisEnabled, continent_layout AS continentLayout,
+               particle_count AS particleCount, speed_coefficient AS speedCoefficient,
+               description, create_time AS createTime
+        FROM t_current_scene
+        ORDER BY scene_id
+    </select>
+    <select id="selectById" resultType="com.springboot.marine_ai.entity.CurrentScene">
+        SELECT scene_id AS sceneId, scene_name AS sceneName, wind_power AS windPower,
+               coriolis_enabled AS coriolisEnabled, continent_layout AS continentLayout,
+               particle_count AS particleCount, speed_coefficient AS speedCoefficient,
+               description, create_time AS createTime
+        FROM t_current_scene
+        WHERE scene_id = #{sceneId}
+    </select>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="sceneId">
+        INSERT INTO t_current_scene (scene_name, wind_power, coriolis_enabled, continent_layout, 
+                                     particle_count, speed_coefficient, description)
+        VALUES (#{sceneName}, #{windPower}, #{coriolisEnabled}, #{continentLayout},
+                #{particleCount}, #{speedCoefficient}, #{description})
+    </insert>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.marine_ai.mapper.CourseMapper">
+    <select id="selectAll" resultType="com.springboot.marine_ai.entity.Course">
+        SELECT id, course_name AS courseName, intro, cover_url AS coverUrl, 
+               course_type AS courseType, create_time AS createTime
+        FROM t_course
+        ORDER BY create_time DESC
+    </select>
+    <select id="selectById" resultType="com.springboot.marine_ai.entity.Course">
+        SELECT id, course_name AS courseName, intro, cover_url AS coverUrl, 
+               course_type AS courseType, create_time AS createTime
+        FROM t_course
+        WHERE id = #{id}
+    </select>
+</mapper>
