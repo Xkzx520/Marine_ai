@@ -19,6 +19,9 @@ public class FileServiceImpl implements FileService {
     @Override
     public String uploadFile(byte[] fileData, String originalFilename) {
         File dir = new File(uploadPath);
+        if (!dir.isAbsolute()) {
+            dir = new File(System.getProperty("user.dir"), uploadPath);
+        }
         if (!dir.exists()) {
             dir.mkdirs();
         }

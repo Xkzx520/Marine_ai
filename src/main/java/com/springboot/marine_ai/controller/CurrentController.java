@@ -1,6 +1,8 @@
 package com.springboot.marine_ai.controller;
 
 import com.springboot.marine_ai.common.Result;
+import com.springboot.marine_ai.dto.CurrentPredictDTO;
+import com.springboot.marine_ai.dto.CurrentPredictRequest;
 import com.springboot.marine_ai.dto.CurrentRecordDTO;
 import com.springboot.marine_ai.entity.CurrentKnowledge;
 import com.springboot.marine_ai.entity.CurrentParams;
@@ -76,6 +78,18 @@ public class CurrentController {
                 return Result.success("提交成功", null);
             }
             return Result.error(500, "提交失败");
+        } catch (IllegalArgumentException e) {
+            return Result.paramError(e.getMessage());
+        } catch (Exception e) {
+            return Result.serverError(e.getMessage());
+        }
+    }
+
+    @PostMapping("/predict")
+    public Result<CurrentPredictDTO> predict(@RequestBody CurrentPredictRequest request) {
+        try {
+            CurrentPredictDTO dto = currentService.predict(request);
+            return Result.success("预测完成", dto);
         } catch (IllegalArgumentException e) {
             return Result.paramError(e.getMessage());
         } catch (Exception e) {

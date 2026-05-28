@@ -42,6 +42,10 @@ public class BiologyServiceImpl implements BiologyService {
         vo.setBioName(biology.getBioName());
         vo.setEnName(biology.getEnName());
         vo.setIntro(biology.getIntro());
+        vo.setHabits(biology.getHabits());
+        vo.setDistribution(biology.getDistribution());
+        vo.setProtectionLevel(biology.getProtectionLevel());
+        vo.setAiFeatureTip(biology.getAiFeatureTip());
         vo.setImgUrl(biology.getImgUrl());
         return vo;
     }

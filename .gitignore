@@ -32,3 +32,12 @@ build/
 ### VS Code ###
 .vscode/
 .trae
+
+### Project runtime ###
+.venv/
+venv/
+upload/
+yolo/dataset/
+yolo/runs/
+yolo/weights/*.pt
+!yolo/weights/.gitkeep

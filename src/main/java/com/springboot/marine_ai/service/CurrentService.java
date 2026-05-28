@@ -1,5 +1,7 @@
 package com.springboot.marine_ai.service;
 
+import com.springboot.marine_ai.dto.CurrentPredictDTO;
+import com.springboot.marine_ai.dto.CurrentPredictRequest;
 import com.springboot.marine_ai.dto.CurrentRecordDTO;
 import com.springboot.marine_ai.entity.CurrentKnowledge;
 import com.springboot.marine_ai.entity.CurrentParams;
@@ -15,4 +17,6 @@ public interface CurrentService {
     CurrentParams getParams();
     boolean submitRecord(CurrentRecordDTO record);
     List<CurrentKnowledge> getKnowledge();
+
+    CurrentPredictDTO predict(CurrentPredictRequest request);
 }

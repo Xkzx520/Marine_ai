@@ -2,13 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springboot.marine_ai.mapper.UserMapper">
     <select id="selectByUsername" resultType="com.springboot.marine_ai.entity.User">
-        SELECT user_id AS userId, username, nickname, role, create_time AS createTime
+        SELECT user_id AS userId, username, nickname, role, password, create_time AS createTime
         FROM t_user
         WHERE username = #{username}
     </select>
     <select id="selectById" resultType="com.springboot.marine_ai.entity.User">
-        SELECT user_id AS userId, username, nickname, role, create_time AS createTime
+        SELECT user_id AS userId, username, nickname, role, password, create_time AS createTime
         FROM t_user
         WHERE user_id = #{userId}
+    </select>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="userId">
+        INSERT INTO t_user (username, nickname, role, password)
+        VALUES (#{username}, #{nickname}, #{role}, #{password})
+    </insert>
+    <update id="updatePassword">
+        UPDATE t_user SET password = #{password} WHERE user_id = #{userId}
+    </update>
+    <select id="selectByRole" resultType="com.springboot.marine_ai.entity.User">
+        SELECT user_id AS userId, username, nickname, role, password, create_time AS createTime
+        FROM t_user
+        WHERE role = #{role}
+        ORDER BY user_id ASC
     </select>
 </mapper>
